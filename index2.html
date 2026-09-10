@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dr. Alexander Vanfleteren -- Psychiater</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f4f1;
+      color: #303b38;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 620px;
+    }
+
+    .card {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding: 24px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .photo {
+      width: 150px;
+      height: 150px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    .functie {
+      margin-bottom: 5px;
+      color: #71847d;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      font-family: Georgia, serif;
+      font-size: 30px;
+      font-weight: normal;
+    }
+
+    .werk {
+      margin-bottom: 16px;
+      color: #68736f;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-size: 14px;
+    }
+
+    a {
+      color: #557269;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .mail-button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 7px;
+      background: #557269;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .mail-button:hover {
+      background: #46635c;
+    }
+
+
+    .contact-form {
+      display: none;
+      margin-top: 12px;
+      padding: 10px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    .contact-form.visible {
+      display: block;
+    }
+
+    .contact-form h2 {
+      padding: 14px 14px 5px;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: normal;
+    }
+
+    .google-form {
+      width: 100%;
+      height: 720px;
+      display: block;
+      border: 0;
+    }
+
+    /* MOBIEL */
+
+    @media (max-width: 550px) {
+
+      body {
+        padding: 12px;
+        padding-top: 30px;
+        align-items: flex-start;
+      }
+
+      .card {
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .photo {
+        width: 110px;
+        height: 110px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .contact {
+        display: block;
+      }
+
+      .contact a {
+        display: block;
+        margin-top: 5px;
+      }
+
+      .contact-form {
+        padding: 5px;
+      }
+
+      .contact-form h2 {
+        padding: 12px 10px 4px;
+        font-size: 20px;
+      }
+
+      .google-form {
+        height: 800px;
+      }
+    }
+
+    @media (max-width: 400px) {
+
+      .card {
+        display: block;
+      }
+
+      .photo {
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .google-form {
+        height: 850px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- profielkaart, pas eventuele bestandsnaam aan in src="bestandsnaam.filetype" -->
+
+    <main class="card">
+
+      <img
+        class="photo"
+        src="drfoto.jpeg" 
+        alt="Dr. Alexander Vanfleteren"
+      >
+
+      <div class="info">
+
+        <div class="functie">
+          ASO Psychiater
+        </div>
+
+        <h1>
+          Dr. Alexander Vanfleteren
+        </h1>
+
+        <div class="werk">
+          PZ Onzelievevrouw<br>
+          Brugge
+        </div>
+
+        <div class="contact">
+
+          <a href="tel:050301899">
+            050 30 18 99
+          </a>
+
+          <a href="mailto:info@pzonzelievevrouw.be">
+            info@pzonzelievevrouw.be
+          </a>
+
+        </div>
+
+        <!-- GEEN onclick MEER -->
+        <button
+          id="contactButton"
+          class="mail-button"
+          type="button"
+        >
+          Contacteer via mail
+        </button>
+
+      </div>
+
+    </main>
+
+
+    <!-- GOOGLE FORMULIER -->
+
+    <div
+      id="contactForm"
+      class="contact-form"
+    >
+
+      <h2>
+        Contacteer Dr. Vanfleteren
+      </h2>
+
+      <!-- plak hieronder de link naar de google forms in src="googleformslink" -->
+      
+      <iframe
+        class="google-form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdcXw7c4snUKzGo2AEBI1Y1w8WVCXlljQ34dTpLElC1TeiIRg/viewform?embedded=true"
+        title="Contactformulier dr. Vanfleteren"
+        loading="lazy">
+        Laden…
+      </iframe>
+
+    </div>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const button = document.getElementById("contactButton");
+      const form = document.getElementById("contactForm");
+
+      button.addEventListener("click", function () {
+
+        const isOpen = form.classList.toggle("visible");
+
+        if (isOpen) {
+
+          button.textContent = "Sluit contactformulier";
+
+          setTimeout(function () {
+            form.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }, 100);
+
+        } else {
+
+          button.textContent = "Contacteer via mail";
+
+        }
+
+      });
+
+    });
+  </script>
+
+</body>
+</html>
